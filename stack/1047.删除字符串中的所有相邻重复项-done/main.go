@@ -11,7 +11,7 @@ import (
 )
 
 func removeDuplicates(S string) string {
-	s := types.Construct()
+	s := types.ConstructStack()
 	if len(S) > 1 {
 		s.Push(fmt.Sprintf("%c", S[0]))
 	} else {

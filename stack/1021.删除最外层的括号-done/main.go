@@ -11,12 +11,10 @@ import (
 	"strings"
 )
 
-
-
 func removeOuterParentheses(S string) string {
 	var primitive []string
-	in := types.Construct()
-	out := types.Construct()
+	in := types.ConstructStack()
+	out := types.ConstructStack()
 	num1 := 0
 	num2 := 0
 	for i := 0; i < len(S); i++ {
