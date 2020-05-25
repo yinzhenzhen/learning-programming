@@ -3,4 +3,34 @@
  * @Author : yz
  */
 
-package _019_链表中的下一个更大节点
+package main
+
+import "github.com/yinzhenzhen/learning-leetcode/types"
+
+func nextLargerNodes(head *types.ListNode) []int {
+	var result []int
+	tail := head.Next
+	before := 0
+	if tail != nil {
+		before = tail.Val.(int)
+		tail = tail.Next
+	}
+
+	for tail != nil {
+		val := tail.Val.(int)
+
+		if val > before {
+
+		}
+
+
+		tail = tail.Next
+	}
+
+	return result
+}
+
+func main()  {
+	head := types.ConstructLink([]int{1, 2, 3})
+	head.Print()
+}
