@@ -13,11 +13,8 @@ type StockSpanner struct {
 
 var stock StockSpanner
 
-var temp StockSpanner
-
 func Constructor() StockSpanner {
 	stock = StockSpanner{}
-	temp = StockSpanner{}
 	return stock
 }
 
