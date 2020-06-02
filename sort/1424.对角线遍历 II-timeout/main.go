@@ -50,6 +50,42 @@ func findDiagonalOrder(nums [][]int) []int {
 	return result
 }
 
+func findDiagonalOrder2(nums [][]int) []int {
+	var result []int
+	dict := make(map[int][]int)
+	for i := 0; i < len(nums); i++ {
+		for j := 0; j < len(nums[i]); j++ {
+			value, exists := dict[i+j]
+			if exists {
+				value = append(value, nums[i][j])
+				dict[i+j] = value
+			} else {
+				dict[i+j] = []int{nums[i][j]}
+			}
+		}
+	}
+
+	// 每行最长长度
+	tempMax := 0
+	for i := 0; i < len(nums); i++ {
+		if len(nums[i]) > tempMax {
+			tempMax = len(nums[i])
+		}
+	}
+	max := tempMax + len(nums) - 1
+
+	for i := 0; i < max; i++ {
+		value, _ := dict[i]
+		for j := len(value)-1; j >= 0; j-- {
+			result = append(result, value[j])
+		}
+	}
+
+	return result
+}
+
 func main()  {
-	fmt.Println(findDiagonalOrder([][]int{{6},{8},{6,1,6,16}}))
+	fmt.Println(findDiagonalOrder2([][]int{{6},{8},{6,1,6,16}}))
+	//fmt.Println(findDiagonalOrder2([][]int{{1,2,3},{4,5,6},{7,8,9}}))
+	fmt.Println(findDiagonalOrder2([][]int{{1,2,3,4,5},{6,7},{8},{9,10,11},{12,13,14,15,16}}))
 }
