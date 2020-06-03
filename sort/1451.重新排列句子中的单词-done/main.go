@@ -50,7 +50,7 @@ func arrangeWords(text string) string {
 		}
 	}
 
-	// 排序
+	// 冒泡排序
 	flag := true
 	for i := 0; i < len(words) && flag; i++ {
 		flag = false
