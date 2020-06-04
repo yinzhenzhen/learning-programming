@@ -12,7 +12,9 @@ import (
 )
 
 type Vote struct {
+	// 队伍名称
 	team string
+	// 在对应名次获得的投票数
 	rank []int
 }
 
@@ -27,6 +29,7 @@ func rankTeams(votes []string) string {
 	// 每个队伍对应的投票总数
 	voteMap := make(map[string][26]int)
 
+	// 构造voteMap
 	for i := 0; i < len(votes); i++ {
 		// 第i名投票者的投票结果
 		vote := votes[i]
@@ -47,7 +50,6 @@ func rankTeams(votes []string) string {
 	// 给key排序，从小到大
 	keys := []string{}
 	for key := range voteMap {
-
 		keys = append(keys, key)
 	}
 	sort.Strings(keys)
@@ -61,7 +63,7 @@ func rankTeams(votes []string) string {
 
 	var result []string
 
-	// 不能整体比较
+	// 不能转成string进行整体比较
 	// 冒泡排序
 	flag := true
 	for i := 0; i < len(teamRanks) && flag; i++ {
@@ -76,6 +78,7 @@ func rankTeams(votes []string) string {
 		}
 	}
 
+	// 从排序后的结果获取队伍名写入返回结果
 	for i := 0; i < len(teamRanks); i++ {
 		result = append(result, teamRanks[i].team)
 	}
