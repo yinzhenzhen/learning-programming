@@ -14,7 +14,7 @@ func widthOfBinaryTree(root *types.TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	// 每层宽度
+	// 宽度最大值
 	var maxWidth = 0
 	// 每层节点
 	var nodes []*types.TreeNode
@@ -25,6 +25,7 @@ func widthOfBinaryTree(root *types.TreeNode) int {
 		var right = -1
 		var leftFlag = false
 		var rightFlag = false
+		// 计算每层的宽度
 		for i,j := 0,len(nodes)-1; !leftFlag || !rightFlag; {
 			if left == -1 && nodes[i] != nil && nodes[i].Val != 0 {
 				left = i
@@ -41,13 +42,14 @@ func widthOfBinaryTree(root *types.TreeNode) int {
 				j--
 			}
 		}
-		fmt.Println("left : ", left)
-		fmt.Println("right : ", right)
-		width := right-left+1
-		fmt.Println("width : ", width)
+		width := right - left + 1
+		// 找到最大宽度值
 		if width > maxWidth {
 			maxWidth = width
 		}
+		//fmt.Println("left : ", left)
+		//fmt.Println("right : ", right)
+		//fmt.Println("width : ", width)
 
 		//for i := 0; i < len(nodes); i++  {
 		//	if nodes[i] != nil {
@@ -61,6 +63,7 @@ func widthOfBinaryTree(root *types.TreeNode) int {
 		// 每层临时节点
 		var tempNodes []*types.TreeNode
 
+		// 构造下一层所有节点的集合
 		var myFlag = false
 		for i := 0; i < len(nodes); i++  {
 			node := nodes[i]
@@ -79,6 +82,7 @@ func widthOfBinaryTree(root *types.TreeNode) int {
 		}
 		nodes = tempNodes
 
+		// 如果下一层所有节点都为nil，则结束整个循环
 		i := 0
 		for ; i < len(nodes); i++ {
 			if nodes[i] != nil {
