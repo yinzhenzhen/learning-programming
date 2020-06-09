@@ -59,3 +59,45 @@ func (tree *TreeNode) PostOrderTraverse()  {
 	tree.Right.PostOrderTraverse()
 	fmt.Printf("%d\n", tree.Val)
 }
+
+// 深度优先遍历-栈
+func (tree *TreeNode) DFS() []int {
+	if tree == nil {
+		return nil
+	}
+	var elem []int
+	var stack Stack
+	stack.Push(tree)
+	for !stack.IsEmpty()  {
+		node := stack.Pop().(*TreeNode)
+		elem = append(elem, node.Val)
+		if node.Right != nil {
+			stack.Push(node.Right)
+		}
+		if node.Left != nil {
+			stack.Push(node.Left)
+		}
+	}
+	return elem
+}
+
+// 广度优先遍历-队列
+func (tree *TreeNode) BFS() []int {
+	if tree == nil {
+		return nil
+	}
+	var elem []int
+	var queue Queue
+	queue.EnQueue(tree)
+	for !queue.IsEmpty()  {
+		node := queue.DeQueue().(*TreeNode)
+		elem = append(elem, node.Val)
+		if node.Left != nil {
+			queue.EnQueue(node.Left)
+		}
+		if node.Right != nil {
+			queue.EnQueue(node.Right)
+		}
+	}
+	return elem
+}
