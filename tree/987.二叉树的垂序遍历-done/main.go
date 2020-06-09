@@ -101,7 +101,6 @@ func verticalTraversal(root *types.TreeNode) [][]int {
 				// fmt.Println("------------------")
 				yy := []NodeVertical{}
 				nodeVerticals = append(append(append(yy, temp1...), newNode), temp2...)
-
 				tempNodes = append(tempNodes, rightNode)
 				tempAbscissa = append(tempAbscissa, x+1)
 				tempVertical = append(tempVertical, y-1)
