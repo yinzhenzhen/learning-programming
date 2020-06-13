@@ -10,6 +10,9 @@ import (
 	"github.com/yinzhenzhen/learning-leetcode/types"
 )
 
+//给你一棵二叉树，它的根为 root 。请你删除 1 条边，使二叉树分裂成两棵子树，且它们子树和的乘积尽可能大。
+//由于答案可能会很大，请你将结果对 10^9 + 7 取模后再返回。
+
 var sumAll []int
 
 const mod = 1E9 + 7
@@ -34,6 +37,7 @@ func max(a, b int) int {
 	return a
 }
 
+// 计算每棵子树的和
 func postOrderTraverse(root *types.TreeNode) int {
 	if root == nil {
 		return 0
