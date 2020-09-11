@@ -2,8 +2,8 @@ module github.com/yinzhenzhen/learning-leetcode
 
 go 1.12
 
-replace github.com/yinzhenzhen/learning-leetcode/stack => ./learning-leetcode/stack
+replace github.com/yinzhenzhen/learning-programming/stack => ./learning-programming/stack
 
-replace github.com/yinzhenzhen/learning-leetcode/tree => ./learning-leetcode/tree
+replace github.com/yinzhenzhen/learning-programming/tree => ./learning-programming/tree
 
-replace github.com/yinzhenzhen/learning-leetcode/types => ./learning-leetcode/types
+replace github.com/yinzhenzhen/learning-programming/types => ./learning-programming/types
