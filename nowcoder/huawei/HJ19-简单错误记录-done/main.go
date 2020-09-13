@@ -38,25 +38,30 @@ func (er *ErrorRecords) Integration() []Description {
 	var result []Description
 
 	// 查找出现次数最高的八条记录
-	for i := 0; i < len(er.recordSlice) && i < 8; i++ {
+	for i := 0; i < len(er.recordSlice); i++ {
 
 		max := i
 
 		for j := i+1; j < len(er.recordSlice); j++ {
 
-			// 如果新的数据比最大的大，标记为最大
-			if er.recordSlice[j].count > er.recordSlice[max].count {
+			// 如果新的数据比最大的更先出现，标记为最大
+			if er.recordSlice[j].order < er.recordSlice[max].order {
 				max = j
-
-			// 	如果新的数据和最大相等
-			} else if er.recordSlice[j].count == er.recordSlice[max].count {
-
-				// 如果新的数据比最大的更先出现，标记为最大
-				if er.recordSlice[j].order < er.recordSlice[max].order {
-					max = j
-				}
-
 			}
+
+			//// 如果新的数据比最大的大，标记为最大
+			//if er.recordSlice[j].count > er.recordSlice[max].count {
+			//	max = j
+			//
+			//// 	如果新的数据和最大相等
+			//} else if er.recordSlice[j].count == er.recordSlice[max].count {
+			//
+			//	// 如果新的数据比最大的更先出现，标记为最大
+			//	if er.recordSlice[j].order < er.recordSlice[max].order {
+			//		max = j
+			//	}
+			//
+			//}
 		}
 
 		result = append(result, er.recordSlice[max])
@@ -67,6 +72,10 @@ func (er *ErrorRecords) Integration() []Description {
 			er.recordSlice[max] = temp
 		}
 
+	}
+
+	if len(result) > 8 {
+		return result[len(result)-8:]
 	}
 
 	return result
@@ -82,7 +91,7 @@ func main()  {
 	}
 
 	for {
-		n, _ := fmt.Scan(&fp, &num)
+		n, _ := fmt.Scanln(&fp, &num)
 		if n == 0 {
 			break
 		}
