@@ -4,3 +4,12 @@
  */
 
 package types
+
+type Node struct {
+	Val       int
+	Neighbors []*Node
+}
+
+func ConstructGraph() *Node {
+	return &Node{}
+}
