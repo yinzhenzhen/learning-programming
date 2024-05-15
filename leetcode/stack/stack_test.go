@@ -2,12 +2,16 @@ package stack
 
 import (
 	"fmt"
+	"github.com/stretchr/testify/require"
 	"github.com/yinzhenzhen/learning-programming/types"
 	"testing"
 )
 
 func Test_isValidParentheses(t *testing.T) {
-	fmt.Println(isValidParentheses("[]{"))
+	b := isValidParentheses("[]{")
+	require.Equal(t, false, b)
+	b = isValidParentheses("()[]{}")
+	require.Equal(t, true, b)
 }
 
 func Test_trap(t *testing.T) {

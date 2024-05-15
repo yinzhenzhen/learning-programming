@@ -2,6 +2,10 @@ module github.com/yinzhenzhen/learning-programming
 
 go 1.21.6
 
-//replace github.com/yinzhenzhen/learning-programming/stack => ./learning-programming/stack
-//replace github.com/yinzhenzhen/learning-programming/tree => ./learning-programming/tree
-//replace github.com/yinzhenzhen/learning-programming/types => ./learning-programming/types
+require github.com/stretchr/testify v1.7.0
+
+require (
+	github.com/davecgh/go-spew v1.1.0 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
+)

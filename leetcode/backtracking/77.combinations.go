@@ -47,7 +47,3 @@ func generateCombinations(n, k, start int, c []int, res *[][]int) {
 	fmt.Println("return")
 	return
 }
-
-func main() {
-
-}
