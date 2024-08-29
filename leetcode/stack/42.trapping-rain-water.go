@@ -5,6 +5,13 @@
 
 package stack
 
+/**
+接雨水：
+
+解题思路：
+
+*/
+
 import (
 	"github.com/yinzhenzhen/learning-programming/types"
 )
