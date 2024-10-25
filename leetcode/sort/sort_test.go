@@ -17,10 +17,6 @@ func Test_merge(t *testing.T) {
 	//2 1, 3 0
 }
 
-func Test_sortColors(t *testing.T) {
-	sortColors([]int{2, 0, 1})
-}
-
 func Test_insertionSortList2(t *testing.T) {
 	//head := types.ConstructDoubleLink([]int{6,5,4,3,2,1})
 	//head.Print()

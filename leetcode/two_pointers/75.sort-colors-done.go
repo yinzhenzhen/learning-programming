@@ -3,7 +3,7 @@
  * @Author : yz
  */
 
-package sort
+package two_pointers
 
 import (
 	"fmt"
