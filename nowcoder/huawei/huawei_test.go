@@ -126,3 +126,15 @@ func Test_minStr(t *testing.T) {
 func Test_T2(t *testing.T) {
 	T2()
 }
+
+func Test_putApples(t *testing.T) {
+	putApples()
+}
+
+func Test_leastCommonMultiple(t *testing.T) {
+	leastCommonMultiple()
+}
+
+func Test_levenshtein(t *testing.T) {
+	levenshtein()
+}
