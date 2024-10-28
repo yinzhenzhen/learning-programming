@@ -136,5 +136,7 @@ func Test_leastCommonMultiple(t *testing.T) {
 }
 
 func Test_levenshtein(t *testing.T) {
-	levenshtein()
+	//levenshtein()
+	c := lev("abcdefg", "abcdef")
+	fmt.Println(c)
 }
