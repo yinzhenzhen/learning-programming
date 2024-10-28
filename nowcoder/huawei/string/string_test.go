@@ -57,6 +57,11 @@ func Test_addMark(t *testing.T) {
 	}
 }
 
+func Test_H106(t *testing.T) {
+	//H106()
+	fmt.Println(characterReverseOrder("I am a student"))
+}
+
 //func Test_OR101(t *testing.T) {
 //	huawei.OR101()
 //}
