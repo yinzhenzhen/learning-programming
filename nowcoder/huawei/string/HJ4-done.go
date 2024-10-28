@@ -3,21 +3,17 @@
  * @Author : yz
  */
 
-package huawei
+package string
 
 func split(input string) (output []string) {
 	if len(input) == 8 {
-
 		output = append(output, input)
 		return
-
 	}
 
 	for len(input) > 8 {
-
 		temp := input[0:8]
 		output = append(output, temp)
-
 		input = input[8:]
 	}
 

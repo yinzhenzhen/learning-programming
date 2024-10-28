@@ -3,7 +3,7 @@
  * @Author : yz
  */
 
-package huawei
+package string
 
 import (
 	"strconv"

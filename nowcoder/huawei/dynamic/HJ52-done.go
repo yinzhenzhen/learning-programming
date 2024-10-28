@@ -1,4 +1,4 @@
-package huawei
+package dynamic
 
 import (
 	"fmt"

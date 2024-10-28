@@ -3,7 +3,7 @@
  * @Author : yz
  */
 
-package huawei
+package string
 
 const mark string = "*"
 
@@ -19,29 +19,22 @@ func addMark(data string) (result string) {
 
 		// 如果当前字符为数字
 		if data[i] >= 48 && data[i] <= 57 {
-
 			if flag == true {
 				// 如果前一个字符也是数字，将它放到连续数字切片中
 				temp = temp + string(data[i])
-
 			} else {
 				// 前一个字符不是数字，但是当前字符是数字
 				temp = temp + string(data[i])
 				flag = true
 			}
-
-			// 如果当前字符不为数字
 		} else {
-			// 如果当前字符不是数字，前一个字符为数字，将暂存数字添加到结果中，并将标志位置为false
 			if flag == true {
-
+				// 如果当前字符不是数字，前一个字符为数字，将暂存数字添加到结果中，并将标志位置为false
 				result = result + mark + temp + mark + string(data[i])
-
 				temp = ""
 				flag = false
-
-				// 前一个字符不为数字，当前也不为数字，直接放到结果中
 			} else {
+				// 前一个字符不为数字，当前也不为数字，直接放到结果中
 				result = result + string(data[i])
 			}
 		}
