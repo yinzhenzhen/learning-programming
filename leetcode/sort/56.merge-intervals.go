@@ -19,7 +19,7 @@ import (
 	"sort"
 )
 
-func merge(intervals [][]int) [][]int {
+func mergeIntervals(intervals [][]int) [][]int {
 	if len(intervals) <= 1 {
 		return intervals
 	}

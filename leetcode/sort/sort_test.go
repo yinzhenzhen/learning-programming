@@ -6,9 +6,9 @@ import (
 	"testing"
 )
 
-func Test_merge(t *testing.T) {
+func Test_mergeIntervals(t *testing.T) {
 	//fmt.Println(merge([][]int{{1, 3}, {2, 6}, {8, 10}, {15, 18}}))
-	fmt.Println(merge([][]int{{1, 9}, {2, 5}, {19, 20}, {10, 11}, {12, 20}, {0, 3}, {0, 1}, {0, 2}}))
+	fmt.Println(mergeIntervals([][]int{{1, 9}, {2, 5}, {19, 20}, {10, 11}, {12, 20}, {0, 3}, {0, 1}, {0, 2}}))
 	// [0, 1] [0, 2] [0, 3] [1, 9] [2, 5] [10, 11] [12, 20] [19, 20]
 	// [0, 9] [10, 11] [12, 20]
 
